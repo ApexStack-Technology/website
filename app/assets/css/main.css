@@ -1,0 +1,9 @@
+@import "tailwindcss";
+h1 {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+p {
+    font-weight: 400;
+    letter-spacing: -0.03em;
+}
