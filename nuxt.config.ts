@@ -18,5 +18,5 @@ export default defineNuxtConfig({
     preload: true,
     prefetch: true,
     download: false
-  }
+  },
 });
