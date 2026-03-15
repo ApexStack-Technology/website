@@ -1,6 +1,6 @@
 <template>
 
-    <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2">
+    <section class="max-w-5xl flex justify-center mx-auto">
         <div class="bg-white p-8">
             <div id="client-precontact-form">
                 <header class="mb-10">
@@ -64,56 +64,6 @@
                 </h2>
                 <div class="mt-2 max-w-md text-gray-600">
                     <p>Our team will be in touch shortly to discuss your Salesforce implementation needs. We're excited to help you scale your operations.</p>
-                </div>
-            </div>
-        </div>
-        <div class="p-8">
-            <header class="mb-10">
-                <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
-                    <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-                    </svg>
-                </div>
-                <h2 class="block font-extrabold text-2xl md:text-3xl lg:text-4xl">
-                    For Talent 
-                </h2>
-                <div class="mt-2 max-w-md text-gray-600">
-                    <p>We're looking for passionate Salesforce architects and consultants to join our growing global team.</p>
-                </div>
-            </header>
-            <div id="talent-culture">
-                <div class="space-y-8 mb-12">
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 mt-2">
-                            <div class="w-2 h-2 rounded-full bg-indigo-500"></div>
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="font-bold text-slate-900">Remote-first culture</h3>
-                            <p class="text-slate-500 text-sm">Work from anywhere in the world with a setup that supports your lifestyle.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 mt-2">
-                            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="font-bold text-slate-900">Growth mindset</h3>
-                            <p class="text-slate-500 text-sm">Continuous certification support and dedicated time for professional development.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 mt-2">
-                            <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="font-bold text-slate-900">Premium compensation</h3>
-                            <p class="text-slate-500 text-sm">Competitive salaries, comprehensive health benefits, and performance bonuses.</p>
-                        </div>
-                    </div>
-                    <button id="talent-apply-btn" type="button" class="mt-3 w-full cursor-pointer inline-flex text-xs items-center justify-center text-white bg-blue-700 hover:bg-blue-800 border border-transparent focus:ring-2 focus:ring-blue-300 shadow-sm font-medium leading-5 rounded-md text-sm px-3 py-2 focus:outline-none">
-                        <svg class="w-3.5 h-3.5 me-1.5 -ms-0.5" viewBox="0 0 16 16" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 4.875C1.5 3.01104 3.01104 1.5 4.875 1.5C6.20018 1.5 7.34838 2.26364 7.901 3.37829C8.1902 3.96162 8.79547 4.5 9.60112 4.5H12.25C13.4926 4.5 14.5 5.50736 14.5 6.75C14.5 7.42688 14.202 8.03329 13.7276 8.44689L13.1622 8.93972L14.1479 10.0704L14.7133 9.57758C15.5006 8.89123 16 7.8785 16 6.75C16 4.67893 14.3211 3 12.25 3H9.60112C9.51183 3 9.35322 2.93049 9.2449 2.71201C8.44888 1.1064 6.79184 0 4.875 0C2.18261 0 0 2.18261 0 4.875V6.40385C0 7.69502 0.598275 8.84699 1.52982 9.59656L2.11415 10.0667L3.0545 8.89808L2.47018 8.42791C1.87727 7.95083 1.5 7.22166 1.5 6.40385V4.875ZM7.29289 7.39645C7.68342 7.00592 8.31658 7.00592 8.70711 7.39645L11.7803 10.4697L12.3107 11L11.25 12.0607L10.7197 11.5303L8.75 9.56066V15.25V16H7.25V15.25V9.56066L5.28033 11.5303L4.75 12.0607L3.68934 11L4.21967 10.4697L7.29289 7.39645Z" fill="currentColor"></path></svg>
-                        <span>Apply</span>
-                    </button>
                 </div>
             </div>
         </div>
