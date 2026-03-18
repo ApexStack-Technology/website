@@ -2,8 +2,8 @@
     import ContactForm from '~/components/contactForm.vue';    
 </script>
 <template>
-    <div class="max-w-4xl mx-auto">
-        <div class="max-w-2xl mx-auto py-10">
+    <div class="max-w-4xl mx-auto pt-24 md:pt-28">
+        <div class="max-w-2xl mx-auto py-10 md:py-16">
             <div class="text-center">
                 <h1 class="text-2xl font-bold text-gray-900 sm:text-4xl">
                     Contact us

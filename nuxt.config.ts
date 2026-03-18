@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/google-fonts'],
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  css: ['./app/assets/css/main.css'],
+  css: ['./app/assets/css/main.css', 'prismjs/themes/prism-tomorrow.css'],
     googleFonts: {
     families: {
       Geist: [100,200,300,400,500,600,700,800,900]

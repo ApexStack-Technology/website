@@ -14,8 +14,10 @@
         <div class="relative overflow-hidden max-w-3xl mx-auto py-10">
             <div class="mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mt-5 text-center mx-auto">
-                    <div class="bg-green-50 inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-green-50 mb-5 transition-transform hover:scale-105 cursor-default">
-                        <span class="text-sm font-semibold text-green-500">Revenue Cloud Specialists</span>
+                    <div class="inline-flex items-center px-4 py-1.5 rounded-full mb-5 border border-gray-200 bg-white/80 backdrop-blur-sm">
+                        <span class="text-xs font-medium tracking-wide text-blue-700 uppercase">
+                            Revenue Cloud Specialists
+                        </span>
                     </div>
                     <h1 class="block font-bold text-black text-4xl md:text-5xl lg:text-6xl">
                         Salesforce consulting & development ‍partner
@@ -39,5 +41,17 @@
     <cloudportfolio />
     <blogfeature />
     <casestudiesfeature />
-    <contactus />
+    <div class="pb-10">
+        <div class="max-w-2xl mx-auto pb-10">
+            <div class="text-center">
+                <h1 class="text-2xl font-bold text-gray-900 sm:text-4xl">
+                    FAQs
+                </h1>
+                <p class="mt-1 text-gray-500">
+                    Your questions, answered.
+                </p>
+            </div>
+        </div>
+        <faqQuestions />
+    </div>
 </template>

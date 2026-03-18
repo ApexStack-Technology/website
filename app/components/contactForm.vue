@@ -11,7 +11,7 @@
                 <div class="grid grid-cols-2 gap-4">
                     <div class="w-full">
                         <label for="client-name-input" class="block mb-1.5 text-sm font-medium text-foreground">Name</label>
-                        <input id="client-name-input" class="py-2.5 sm:py-3 px-4 rounded-lg block w-full border border-gray-300 sm:text-sm text-foreground placeholder:text-muted-foreground-1 focus:border-primary-focus focus:ring-primary-focus disabled:opacity-50 disabled:pointer-events-none" name="client-name" type="text" placeholder="John Doe">
+                        <input id="client-name-input" class="py-2.5 sm:py-3 px-4 rounded-lg block w-full border border-gray-300 sm:text-sm text-foreground placeholder:text-muted-foreground-1 focus:border-primary-focus focus:ring-primary-focus disabled:opacity-50 disabled:pointer-events-none" name="client-name" type="text" placeholder="John Acme">
                         <p class="text-xs text-red-500 mt-1 hidden" id="client-name-error">Please enter a valid name.</p>
                     </div>
                     <div class="w-full">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="w-full mt-3">
                     <label for="client-email-input" class="block mb-1.5 text-sm font-medium text-foreground">Email</label>
-                    <input id="client-email-input" class="py-2.5 sm:py-3 px-4 rounded-lg block w-full border border-gray-300 sm:text-sm text-foreground placeholder:text-muted-foreground-1 focus:border-primary-focus focus:ring-primary-focus disabled:opacity-50 disabled:pointer-events-none" name="client-email" type="email" placeholder="john@example.com">
+                    <input id="client-email-input" class="py-2.5 sm:py-3 px-4 rounded-lg block w-full border border-gray-300 sm:text-sm text-foreground placeholder:text-muted-foreground-1 focus:border-primary-focus focus:ring-primary-focus disabled:opacity-50 disabled:pointer-events-none" name="client-email" type="email" placeholder="john@acme.com">
                     <p class="text-xs text-red-500 mt-1 hidden" id="client-email-error">Enter a valid email address</p>
                 </div>
                 <div class="w-full mt-3">
