@@ -1,14 +1,14 @@
 <template>
 
-    <div class="relative overflow-hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
+    <div class="relative overflow-hidden max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-10">
         <div class="mt-5 text-center mx-auto">
             <div class="text-center">
                 <span class="inline-block px-3 py-1 rounded-full bg-blue-50 text-[9px] font-bold text-[#0052FF] uppercase tracking-widest mb-2">Cloud Portfolio</span>
-                <h2 class="block font-extrabold text-2xl md:text-3xl lg:text-4xl">
+                <h2 class="block font-extrabold text-xl md:text-3xl lg:text-4xl">
                     Explore Salesforce in a Whole New Way 
                 </h2>
             </div>
-            <div class="mt-2 max-w-md text-center mx-auto text-gray-600">
+            <div class="mt-2 text-sm md:text-md max-w-md text-center mx-auto text-gray-600">
                 <p>See how different Salesforce platforms support sales, service, marketing, and data across your operations.</p>
             </div>
         </div>
