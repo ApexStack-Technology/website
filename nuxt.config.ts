@@ -1,22 +1,30 @@
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  vite: {
-    plugins: [
-      tailwindcss(),
-    ],
-  },
-  modules: ['@nuxtjs/google-fonts'],
-  compatibilityDate: "2025-07-15",
+  compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  css: ['./app/assets/css/main.css', 'prismjs/themes/prism-tomorrow.css'],
-    googleFonts: {
+  css: ['~/assets/css/main.css'],
+
+  modules: [
+    '@nuxt/content',
+    '@nuxtjs/google-fonts'
+  ],
+
+  googleFonts: {
     families: {
-      Geist: [100,200,300,400,500,600,700,800,900]
-    },
-    display: 'swap',
-    preload: true,
-    prefetch: true,
-    download: false
+      Inter: [300,400,500,600,700],
+      Manrope: [300,400,500,600,700]
+    }
   },
-});
+
+  vite: {
+    plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+      ]
+    }
+  }
+
+})
