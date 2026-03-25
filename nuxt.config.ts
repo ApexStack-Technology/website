@@ -7,14 +7,28 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/content',
-    '@nuxtjs/google-fonts'
+    '@nuxt/fonts'
   ],
 
-  googleFonts: {
-    families: {
-      Inter: [300,400,500,600,700],
-      Manrope: [300,400,500,600,700]
-    }
+  fonts: {
+    families: [
+      {
+        name: 'Inter',
+        provider: 'google',
+        weights: [300,400,500,600,700],
+        styles: ['normal'],
+        display: 'block',
+        preload: true
+      },
+      {
+        name: 'Manrope',
+        provider: 'google',
+        weights: [300,400,500,600,700],
+        styles: ['normal'],
+        display: 'block',
+        preload: true
+      }
+    ]
   },
 
   vite: {

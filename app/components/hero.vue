@@ -5,10 +5,9 @@
         <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary-container/10 blur-[120px] rounded-full"></div>
         <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-md">
-                <span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
                 <span class="text-xs font-label font-bold text-primary-fixed uppercase tracking-widest">Revenue Cloud Specialists</span>
             </div>
-            <h1 class="text-3xl md:text-5xl lg:text-6xl font-headline font-extrabold text-white tracking-tighter leading-[1.1] mb-6">
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-headline font-extrabold text-white tracking-tighter leading-[1.1] mb-6 max-w-2xl mx-auto">
                 Salesforce consulting &amp; <span class="text-primary-container">development partner</span>
             </h1>
             <p class="text-base md:text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed mb-8 font-body">
