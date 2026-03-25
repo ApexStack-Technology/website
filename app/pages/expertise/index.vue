@@ -92,9 +92,6 @@
             </div>
         </div>
     </div>
-    <h2 class="text-3xl md:text-4xl font-headline font-extrabold text-on-surface tracking-tight my-10 max-w-5xl text-center mx-auto">
-        Distinguished Expertise
-    </h2>
     <div class="grid grid-cols-1 md:grid-cols-12 gap-4 max-w-6xl mx-auto pb-20 px-8 md:px-0">
                 <div class="md:col-span-8 bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(19,27,46,0.04)] flex flex-col justify-between group hover:translate-y-[-2px] transition-all duration-300">
                     <div>
