@@ -23,7 +23,7 @@
             <!-- Right Side -->
             <div class="flex items-center gap-4 justify-end">
                 <a href="/contact">
-                    <button class="hidden md:block bg-primary text-white px-6 py-2.5 rounded-full font-headline font-semibold text-sm hover:scale-95 duration-200 ease-in-out">
+                    <button class="hidden cursor-pointer md:block bg-primary text-white px-6 py-2.5 rounded-full font-headline font-semibold text-sm hover:scale-95 duration-200 ease-in-out">
                         Contact Us
                     </button>
                 </a>
