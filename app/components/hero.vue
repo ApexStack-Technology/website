@@ -1,5 +1,5 @@
 <template>
-    <div class="relative min-h-[80vh] flex items-center justify-center py-12 overflow-hidden bg-[#0b0f1a]">
+    <div class="relative min-h-[80vh] flex items-center justify-center pb-12 pt-20 overflow-hidden bg-[#0b0f1a]">
         <div class="absolute inset-0 hero-pattern opacity-40"></div>
         <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/20 blur-[120px] rounded-full"></div>
         <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary-container/10 blur-[120px] rounded-full"></div>

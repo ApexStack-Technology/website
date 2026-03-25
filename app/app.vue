@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout>
     <Navbar />
-    <main class="pt-16">
+    <main class="pt-16 bg-surface">
       <NuxtPage />
     </main>
     <Footer />
