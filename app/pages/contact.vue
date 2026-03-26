@@ -1,9 +1,9 @@
 <template>
     <section class="max-w-7xl mx-auto px-8 py-20 text-center">
-        <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter text-primary mb-6 leading-[1.1]">
-            Transform Your Business with Salesforce Architecture
+        <h1 class="font-headline text-4xl md:text-6xl font-extrabold tracking-tighter text-primary mb-6 leading-[1.1]">
+            Transform Your Business with <br>Salesforce Architecture
         </h1>
-        <p class="max-w-2xl mx-auto text-on-surface-variant text-lg md:text-xl font-medium leading-relaxed">
+        <p class="max-w-xl mx-auto text-on-surface-variant text-md md:text-lg font-medium leading-relaxed">
             Convert complexity into structured, high-performing systems that accelerate execution and long-term growth.
         </p>
     </section>
@@ -91,6 +91,9 @@
                         </button>
                     </form>
                 </div>
+            </div>
+            <div class="text-center mt-10 text-sm md:text-base text-on-surface-variant">
+                Prefer direct communication? <span class="text-blue-700 font-medium">Srimathi[at]apexstacktech[dot]com</span>
             </div>
         </div>
     </section>
