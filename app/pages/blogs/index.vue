@@ -1,11 +1,17 @@
 <script setup>
-    const { data: blogs } = await useAsyncData('blogs', () =>
-        queryCollection('blogs').all()
-    )
-    
-    const blogsContent = [...blogs.value].sort(
-        (a, b) => new Date(b.date) - new Date(a.date)
-    );
+import { computed } from 'vue'
+
+const { data: blogs } = await useAsyncData(
+    'blogs',
+    () => queryCollection('blogs').all(),
+    { default: () => [] }
+)
+
+const blogsContent = computed(() =>
+    blogs.value
+        .slice()
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+)
 </script>
 <template>
     <div class="px-8">

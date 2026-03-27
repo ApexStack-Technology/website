@@ -1,13 +1,15 @@
 <script setup>
-    const { data: caseStudies } = await useAsyncData('caseStudies', () =>
-        queryCollection('caseStudies').all()
+    const { data: caseStudies } = await useAsyncData(
+        'caseStudies',
+        () => queryCollection('caseStudies').all(),
+        { default: () => [] }
     )
 
-    const caseStudiesContent = [...caseStudies.value].sort(
-        (a, b) => new Date(b.date) - new Date(a.date)
-    );
-    
-    console.log(caseStudiesContent)
+    const caseStudiesContent = computed(() =>
+        caseStudies.value
+            .slice()
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+    )
 </script>
 <style>
 .glass-card {

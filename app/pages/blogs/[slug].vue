@@ -1,5 +1,5 @@
 <script setup>
-    import { h } from 'vue'
+    import { h, computed } from 'vue'
     const route = useRoute()
     
     let path = route.params.slug
@@ -10,18 +10,24 @@
       path = ''
     }
     
-    const { data: blogs } = await useAsyncData('blogs', () =>
-      queryCollection('blogs').all()
+    const { data: blogs } = await useAsyncData(
+      'blogs',
+      () => queryCollection('blogs').all(),
+      { default: () => [] }
     )
     
-    const blogsContent = [...blogs.value].sort(
-        (a, b) => new Date(b.date) - new Date(a.date)
-    );
+    const blogsContent = computed(() =>
+      blogs.value
+        .slice()
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+    )
     
-    const content = blogsContent.find((blog) => {
-      const slug = blog.stem.split('/').pop()
-      return slug === path
-    })
+    const content = computed(() =>
+      blogsContent.value.find((blog) => {
+        const slug = blog.stem.split('/').pop()
+        return slug === path
+      })
+    )
     
     const resolveTag = (node) => {
       const tag = node[0]
@@ -48,12 +54,12 @@
             <div class="relative overflow-hidden rounded-xl bg-surface-container-low p-12 md:p-24 flex flex-col items-center text-center">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
                 <h1 class="text-4xl md:text-6xl font-headline font-extrabold text-primary tracking-tight leading-tight mb-8">
-                    {{ content.title }}
+                    {{ content?.title }}
                 </h1>
                 <div class="flex flex-wrap items-center gap-6 text-sm font-label text-on-surface-variant">
                     <div class="flex items-center gap-2">
                         <span class="material-symbols-outlined text-lg" data-icon="calendar_today">calendar_today</span>
-                        <span>{{ content.date ? new Date(content.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }) : 'No date' }}</span>
+                        <span>{{ content?.date ? new Date(content.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }) : 'No date' }}</span>
                     </div>
                 </div>
             </div>
@@ -61,7 +67,7 @@
     </div>
     <article class="max-w-3xl mx-auto px-6 pb-24">
         <div>
-            <template v-for="(node, index) in content.meta.body" :key="index">
+            <template v-for="(node, index) in content?.meta?.body || []" :key="index">
                 <component
                     v-if="Array.isArray(node)"
                     :is="resolveTag(node).tag"
