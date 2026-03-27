@@ -10,12 +10,30 @@ export default defineNuxtConfig({
     '@nuxt/fonts'
   ],
 
+  content: {
+    build: {
+      markdown: {}
+    }
+  },
+
+  nitro: {
+    preset: 'vercel',
+    prerender: {
+      crawlLinks: true,
+      routes: ['/']
+    }
+  },
+
+  routeRules: {
+    '/**': { prerender: true }
+  },
+
   fonts: {
     families: [
       {
         name: 'Inter',
         provider: 'google',
-        weights: [300,400,500,600,700],
+        weights: [300, 400, 500, 600, 700],
         styles: ['normal'],
         display: 'block',
         preload: true
@@ -23,7 +41,7 @@ export default defineNuxtConfig({
       {
         name: 'Manrope',
         provider: 'google',
-        weights: [300,400,500,600,700],
+        weights: [300, 400, 500, 600, 700],
         styles: ['normal'],
         display: 'block',
         preload: true
@@ -40,5 +58,4 @@ export default defineNuxtConfig({
       ]
     }
   }
-
 })
