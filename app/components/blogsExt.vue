@@ -32,7 +32,7 @@ const blogsContent = computed(() =>
                 </a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto pb-20">
-            <div v-for="blog in blogsContent.value" :key="blog.id" class="group cursor-pointer flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
+            <div v-for="blog in blogsContent" :key="blog.id" class="group cursor-pointer flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
                 <a :href="`/blogs/${blog.title.replace(/\s+/g, '-').toLowerCase()}`">
                     <div class="h-40 overflow-hidden relative">
                         <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" :src="blog.cover || 'https://via.placeholder.com/400x200'" />
