@@ -47,15 +47,14 @@
                 </div>
                 </div>
 
-                <!--<div>
-                    
+                <div>
                 <h4 class="text-xs font-semibold text-foreground uppercase">Resources</h4>
                 <div class="mt-3 grid space-y-3 text-sm">
                     <p><a class="inline-flex gap-x-2 text-muted-foreground-2 hover:text-foreground focus:outline-hidden focus:text-foreground" href="#">Revenue Cloud Advanced</a></p>
                     <p><a class="inline-flex gap-x-2 text-muted-foreground-2 hover:text-foreground focus:outline-hidden focus:text-foreground" href="#">Revenue Cloud Billing</a></p>
                     <p><a class="inline-flex gap-x-2 text-muted-foreground-2 hover:text-foreground focus:outline-hidden focus:text-foreground" href="#">Revenue Cloud CPQ</a></p>
                 </div>
-                </div>-->
+                </div>
             </div>
             <hr class="text-gray-300 py-2">
             <p class="mt-3 text-xs sm:text-sm text-muted-foreground-2">

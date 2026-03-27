@@ -1,5 +1,5 @@
 <script setup>
-    import { h, computed } from 'vue'
+    import { h } from 'vue'
     const route = useRoute()
     
     let path = route.params.slug
@@ -14,18 +14,13 @@
       queryCollection('caseStudies').all()
     )
     
-    const caseStudiesContent = computed(() => {
-        const data = caseStudies.value || []
-        return data.slice().sort(
-            (a, b) => new Date(b.date) - new Date(a.date)
-        )
-    })
+    const caseStudiesContent = [...caseStudies.value].sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+    );
     
-    const content = computed(() => {
-      return caseStudiesContent.value.find((caseStudy) => {
-        const slug = caseStudy.stem.split('/').pop()
-        return slug === path
-      }) || {}
+    const content = caseStudiesContent.find((caseStudy) => {
+      const slug = caseStudy.stem.split('/').pop()
+      return slug === path
     })
     console.log(content)
     
@@ -57,7 +52,7 @@
             </h1>
             <div class="inline-flex items-center gap-2 px-6 py-2 mb-5 rounded-full bg-[#004ac6]/10 border border-[#004ac6]/30">
                 <span class="text-2xl font-extrabold text-[#004ac6]">
-                 {{ content.meta?.benefitScale }} {{ content.meta?.benefitName }}
+                 {{ content.meta.benefitScale }} {{ content.meta.benefitName }}
                 </span>
             </div>
             <div class="flex flex-wrap items-center gap-6 text-sm font-label text-on-surface-variant">
@@ -71,7 +66,7 @@
     <div class="bg-[#050810]">
         <article class="max-w-3xl mx-auto px-6 pb-24">
             <div>
-                <template v-for="(node, index) in content.meta?.body || []" :key="index">
+                <template v-for="(node, index) in content.meta.body" :key="index">
                     <component
                         v-if="Array.isArray(node)"
                         :is="resolveTag(node).tag"
@@ -113,5 +108,4 @@
             </div>
         </article>
     </div>
-    <Cta />
 </template>

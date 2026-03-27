@@ -3,13 +3,9 @@ const { data: blogs } = await useAsyncData('blogs', () =>
   queryCollection('blogs').all()
 )
 
-const blogsContent = computed(() => {
-  const data = blogs.value || []
-  return data
-    .slice()
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 3)
-})
+const blogsContent = [...blogs.value]
+  .sort((a, b) => new Date(b.date) - new Date(a.date))
+  .slice(0, 3)
 </script>
 <template>
     <section class="py-16 px-4 bg-surface">

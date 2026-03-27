@@ -18,7 +18,7 @@
                 <a class="font-headline font-semibold tracking-tight text-[#434655] hover:text-[#004ac6] transition-colors duration-300 whitespace-nowrap" href="/case-studies">Case Studies</a>
                 <a class="font-headline font-semibold tracking-tight text-[#434655] hover:text-[#004ac6] transition-colors duration-300" href="/approach">Approach</a>
                 <a class="font-headline font-semibold tracking-tight text-[#434655] hover:text-[#004ac6] transition-colors duration-300" href="/blogs">Blogs</a>
-                <!-- <a class="font-headline font-semibold tracking-tight text-[#434655] hover:text-[#004ac6] transition-colors duration-300" href="/resources">Resources</a> -->
+                <a class="font-headline font-semibold tracking-tight text-[#434655] hover:text-[#004ac6] transition-colors duration-300" href="/resources">Resources</a>
             </div>
             <!-- Right Side -->
             <div class="flex items-center gap-4 justify-end">
@@ -42,7 +42,7 @@
             <a @click="closeMenu" class="font-headline font-semibold text-[#434655] whitespace-nowrap" href="/case-studies">Case Studies</a>
             <a @click="closeMenu" class="font-headline font-semibold text-[#434655]" href="/approach">Approach</a>
             <a @click="closeMenu" class="font-headline font-semibold text-[#434655]" href="/blogs">Blog</a>
-            <!-- <a @click="closeMenu" class="font-headline font-semibold text-[#434655]" href="/resources">Resources</a> -->
+            <a @click="closeMenu" class="font-headline font-semibold text-[#434655]" href="/resources">Resources</a>
             <a href="/contact">
                 <button class="bg-primary text-white px-6 py-2.5 rounded-full font-headline font-semibold text-sm mt-2">
                     Contact Us
