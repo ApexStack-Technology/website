@@ -1,11 +1,15 @@
 <script setup>
 import { computed } from 'vue'
 
-const { data: caseStudies } = await useAsyncData(
+const { data: caseStudies, error, status } = await useAsyncData(
   'caseStudies',
   () => queryCollection('caseStudies').all(),
   { default: () => [] }
 )
+
+console.log('status:', status.value)
+console.log('error:', error.value)
+console.log('caseStudies:', caseStudies.value)
 
 const caseStudiesContent = computed(() =>
   (caseStudies.value ?? [])

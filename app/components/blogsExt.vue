@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue'
-const { data: blogs } = useAsyncData(
+const { data: blogs } = await useAsyncData(
   'blogs',
   () => queryCollection('blogs').all(),
   { default: () => [] }
