@@ -1,5 +1,5 @@
 <script setup>
-    import { h } from 'vue'
+    import { h, computed } from 'vue'
     const route = useRoute()
     
     let path = route.params.slug
@@ -14,13 +14,18 @@
       queryCollection('caseStudies').all()
     )
     
-    const caseStudiesContent = [...caseStudies.value].sort(
-        (a, b) => new Date(b.date) - new Date(a.date)
-    );
+    const caseStudiesContent = computed(() => {
+        const data = caseStudies.value || []
+        return data.slice().sort(
+            (a, b) => new Date(b.date) - new Date(a.date)
+        )
+    })
     
-    const content = caseStudiesContent.find((caseStudy) => {
-      const slug = caseStudy.stem.split('/').pop()
-      return slug === path
+    const content = computed(() => {
+      return caseStudiesContent.value.find((caseStudy) => {
+        const slug = caseStudy.stem.split('/').pop()
+        return slug === path
+      }) || {}
     })
     console.log(content)
     
@@ -48,17 +53,17 @@
         <div class="max-w-5xl mx-auto relative overflow-hidden rounded-xl bg-[#0a0f1d] p-12 md:p-24 flex flex-col items-center text-center">
             <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
             <h1 class="text-4xl md:text-6xl font-headline font-extrabold text-white tracking-tight leading-tight mb-3">
-                {{ content.title }}
+                {{ content?.title }}
             </h1>
             <div class="inline-flex items-center gap-2 px-6 py-2 mb-5 rounded-full bg-[#004ac6]/10 border border-[#004ac6]/30">
                 <span class="text-2xl font-extrabold text-[#004ac6]">
-                 {{ content.meta.benefitScale }} {{ content.meta.benefitName }}
+                 {{ content?.meta.benefitScale }} {{ content?.meta.benefitName }}
                 </span>
             </div>
             <div class="flex flex-wrap items-center gap-6 text-sm font-label text-on-surface-variant">
                 <div class="flex items-center gap-2">
                     <span class="material-symbols-outlined text-lg text-slate-600" data-icon="calendar_today">calendar_today</span>
-                    <span class="text-slate-600">{{ content.date ? new Date(content.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }) : 'No date' }}</span>
+                    <span class="text-slate-600">{{ content?.date ? new Date(content?.date).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }) : 'No date' }}</span>
                 </div>
             </div>
         </div>
@@ -66,7 +71,7 @@
     <div class="bg-[#050810]">
         <article class="max-w-3xl mx-auto px-6 pb-24">
             <div>
-                <template v-for="(node, index) in content.meta.body" :key="index">
+                <template v-for="(node, index) in content?.meta.body" :key="index">
                     <component
                         v-if="Array.isArray(node)"
                         :is="resolveTag(node).tag"

@@ -3,9 +3,12 @@
         queryCollection('caseStudies').all()
     )
 
-    const caseStudiesContent = [...caseStudies.value].sort(
-        (a, b) => new Date(b.date) - new Date(a.date)
-    );
+    const caseStudiesContent = computed(() => {
+        const data = caseStudies.value || []
+        return data.slice().sort(
+            (a, b) => new Date(b.date) - new Date(a.date)
+        )
+    })
     
     console.log(caseStudiesContent)
 </script>
