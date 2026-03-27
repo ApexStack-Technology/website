@@ -1,11 +1,13 @@
 <script setup>
-const { data: caseStudies } = await useAsyncData('caseStudies', () =>
-  queryCollection('caseStudies').all()
-)
+    const { data: caseStudies } = await useAsyncData('caseStudies', () =>
+        queryCollection('caseStudies').all()
+    )
 
-const caseStudiesContent = [...caseStudies.value]
-  .sort((a, b) => new Date(b.date) - new Date(a.date))
-  .slice(0, 3)
+    const caseStudiesContent = [...caseStudies.value].sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+    );
+    
+    console.log(caseStudiesContent)
 </script>
 <style>
 .glass-card {
@@ -17,22 +19,16 @@ const caseStudiesContent = [...caseStudies.value]
 <template>
     <section class="py-16 px-4 bg-on-background relative overflow-hidden">
         <div class="max-w-5xl mx-auto relative z-10">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
-                <div class="max-w-xl">
-                    <span class="text-primary-fixed font-label font-bold tracking-widest uppercase text-xs">
-                    Success Stories
-                    </span>
-                    <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-white tracking-tight mt-2">
-                        Proven outcomes at scale.
-                    </h2>
-                </div>
-                <a href="/case-studies">
-                    <button class="cursor-pointer px-5 py-2 rounded-full border border-white/20 text-white text-xs font-headline font-bold hover:bg-white/10 transition-colors">
-                        All Case Studies
-                    </button>
-                </a>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <h1 class="text-5xl text-center md:text-7xl font-extrabold font-headline tracking-tighter text-white mb-8 leading-[0.95] text-glow">
+                Architecting <br/>
+                <span class="bg-gradient-to-r from-blue-400 via-blue-600 to-indigo-500 bg-clip-text text-transparent">Success at Scale</span>
+            </h1>
+            <p class="text-md md:text-lg text-center text-slate-400 font-body leading-relaxed max-w-2xl mx-auto mb-12">
+                We bridge the gap between complex enterprise architecture and high-performance execution. Discover how we've navigated architectural transformation for global leaders.
+            </p>
+        </div>
+        <section class="max-w-6xl mx-auto px-8 pb-24 pt-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div v-for="caseStudy in caseStudiesContent" :key="caseStudy.id" class="bg-slate-800 cursor-pointer rounded-lg overflow-hidden flex flex-col group transition-all duration-500 hover:translate-y-[-8px] hover:border-blue-500/30">
                     <a :href="`/case-studies/${caseStudy.title.replace(/\s+/g, '-').toLowerCase()}`">
                         <div class="aspect-video relative overflow-hidden">
@@ -58,6 +54,6 @@ const caseStudiesContent = [...caseStudies.value]
                     </a>
                 </div>
             </div>
-        </div>
+        </section>
     </section>
 </template>

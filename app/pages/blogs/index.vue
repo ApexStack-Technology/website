@@ -1,31 +1,23 @@
 <script setup>
-const { data: blogs } = await useAsyncData('blogs', () =>
-  queryCollection('blogs').all()
-)
-
-const blogsContent = [...blogs.value]
-  .sort((a, b) => new Date(b.date) - new Date(a.date))
-  .slice(0, 3)
+    const { data: blogs } = await useAsyncData('blogs', () =>
+        queryCollection('blogs').all()
+    )
+    
+    const blogsContent = [...blogs.value].sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+    );
 </script>
 <template>
-    <section class="py-16 px-4 bg-surface">
-        <div class="max-w-5xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
-                <div class="max-w-xl">
-                    <span class="text-primary font-label font-bold tracking-widest uppercase text-xs">
-                    Technical Insights
-                    </span>
-                    <h2 class="text-2xl md:text-3xl font-headline font-extrabold text-on-surface tracking-tight mt-2">
-                        Salesforce architecture, cloud scalability, enterprise tech insights.
-                    </h2>
-                </div>
-                <a href="/blogs">
-                    <button class="px-5 py-2 cursor-pointer rounded-full border border-outline-variant text-on-surface text-xs font-headline font-bold hover:bg-surface-container-high transition-colors">
-                        View All
-                    </button>
-                </a>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto pb-20">
+    <div class="px-8">
+        <div class="max-w-5xl mx-auto pt-16 pb-10 text-center lg:text-left">
+            <h1 class="text-4xl md:text-6xl font-black font-headline tracking-tighter text-blue-900 mb-2">
+                Technical <span class="text-gradient">Insights</span>
+            </h1>
+            <p class="text-md md:text-lg text-on-surface-variant max-w-2xl font-body leading-relaxed">
+                Strategic deep-dives into Salesforce architecture, cloud scalability, and enterprise technology.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto pb-20">
             <div v-for="blog in blogsContent" :key="blog.id" class="group cursor-pointer flex flex-col bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
                 <a :href="`/blogs/${blog.title.replace(/\s+/g, '-').toLowerCase()}`">
                     <div class="h-40 overflow-hidden relative">
@@ -44,6 +36,5 @@ const blogsContent = [...blogs.value]
                 </a>
             </div>
         </div>
-        </div>
-    </section>
+    </div>
 </template>
