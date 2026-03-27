@@ -24,13 +24,6 @@ const caseStudiesContent = computed(() =>
 </style>
 
 <template>
-    <!-- TEMP DEBUG -->
-    <pre class="text-white text-xs p-4 bg-red-900">
-status: {{ status }}
-error: {{ JSON.stringify(error) }}
-data: {{ JSON.stringify(caseStudies) }}
-    </pre>
-
     <section class="py-16 px-4 bg-on-background relative overflow-hidden">
         <div class="max-w-5xl mx-auto relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
