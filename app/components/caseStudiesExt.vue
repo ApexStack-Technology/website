@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue'
+
 const { data: caseStudies } = await useAsyncData(
   'caseStudies',
   () => queryCollection('caseStudies').all(),
@@ -7,12 +8,13 @@ const { data: caseStudies } = await useAsyncData(
 )
 
 const caseStudiesContent = computed(() =>
-  caseStudies.value
+  (caseStudies.value ?? [])
     .slice()
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, 3)
 )
 </script>
+
 <style>
 .glass-card {
     background: rgba(255, 255, 255, 0.02);
@@ -20,6 +22,7 @@ const caseStudiesContent = computed(() =>
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 </style>
+
 <template>
     <section class="py-16 px-4 bg-on-background relative overflow-hidden">
         <div class="max-w-5xl mx-auto relative z-10">
@@ -38,7 +41,7 @@ const caseStudiesContent = computed(() =>
                     </button>
                 </a>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div v-if="caseStudiesContent.length" class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div v-for="caseStudy in caseStudiesContent" :key="caseStudy.id" class="bg-slate-800 cursor-pointer rounded-lg overflow-hidden flex flex-col group transition-all duration-500 hover:translate-y-[-8px] hover:border-blue-500/30">
                     <a :href="`/case-studies/${caseStudy.title.replace(/\s+/g, '-').toLowerCase()}`">
                         <div class="aspect-video relative overflow-hidden">
